@@ -1,9 +1,9 @@
 let level=0;
-let audio1= new Audio("sounds/blue.mp3");
-let audio2= new Audio('sounds/green.mp3');
-let audio3= new Audio("sounds/red.mp3") 
-let audio4=new Audio("sounds/yellow.mp3")
-let audio5=new Audio("sounds/wrong.mp3")
+let audio1= new Audio("blue.mp3");
+let audio2= new Audio('green.mp3');
+let audio3= new Audio("red.mp3") 
+let audio4=new Audio("yellow.mp3")
+let audio5=new Audio("wrong.mp3")
 let green=$("#green");
 let red=$("#red");
 let blue=$("#blue");
