@@ -21,8 +21,8 @@ $(document).on("keypress",()=>{
     }
 });
 
-if(checkKeyPressed){
-    $(".btn").on("click",function(){let userChosenColor=this.id;
+
+$(".btn").on("click",function(){let userChosenColor=this.id;
 userClickedPattern.push(userChosenColor);
 playSound(userChosenColor);
 animatePress(userChosenColor);
@@ -33,7 +33,7 @@ if(checkEquality(userClickedPattern,gamePattern)){
             nextSequence();
         },1000);
     };    
-}else{
+}else if (level>=1){
     $("h1").text(`You loose ! Press a key to restart`);
     audio5.play();
     userClickedPattern=[];
@@ -49,7 +49,7 @@ if(checkEquality(userClickedPattern,gamePattern)){
 };
 });
 
-}
+
 
 
 function nextSequence(){
