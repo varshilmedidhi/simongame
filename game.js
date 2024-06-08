@@ -11,8 +11,9 @@ let yellow=$("#yellow");
 let buttonColors=["green","red","blue","yellow"];
 let userClickedPattern=[];
 let gamePattern=[];
-
+var checkKeyPressed=false;
 $(document).on("keypress",()=>{
+    checkKeyPressed=true;
     if(level===0 ){
         userClickedPattern=[];
         nextSequence();
@@ -20,13 +21,11 @@ $(document).on("keypress",()=>{
     }
 });
 
-
-$(".btn").on("click",function(){let userChosenColor=this.id;
+if(checkKeyPressed){
+    $(".btn").on("click",function(){let userChosenColor=this.id;
 userClickedPattern.push(userChosenColor);
 playSound(userChosenColor);
 animatePress(userChosenColor);
-console.log(userClickedPattern,gamePattern);
-console.log(checkEquality(userClickedPattern,gamePattern));
 if(checkEquality(userClickedPattern,gamePattern)){
     if(userClickedPattern.length===gamePattern.length){
         setTimeout(function(){
@@ -49,6 +48,8 @@ if(checkEquality(userClickedPattern,gamePattern)){
     }); 
 };
 });
+
+}
 
 
 function nextSequence(){
