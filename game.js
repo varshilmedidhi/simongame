@@ -13,8 +13,8 @@ let userClickedPattern=[];
 let gamePattern=[];
 var checkKeyPressed=false;
 $(document).on("keypress",()=>{
-    checkKeyPressed=true;
     if(level===0 ){
+        checkKeyPressed=true;
         userClickedPattern=[];
         nextSequence();
         $("h1").text(`Level ${level}`);
